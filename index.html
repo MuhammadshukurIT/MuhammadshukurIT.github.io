@@ -1,71 +1,58 @@
-<!DOCTYPE html><html lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammadshukur | Визитка</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Добро пожаловать</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      font-family: sans-serif;
+      background: #f0f0f0;
       color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      margin: 0;
+      padding: 2rem;
       text-align: center;
     }
-    .card {
-      background-color: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      max-width: 400px;
-      width: 90%;
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .card h1 {
-      margin: 0 0 10px;
-      font-size: 28px;
-    }
-    .card p {
-      margin: 8px 0;
-      font-size: 16px;
-      color: #555;
-    }
-    .links a {
+    a.button {
       display: inline-block;
-      margin: 8px 10px;
-      padding: 10px 16px;
-      background-color: #4a90e2;
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background: #0077cc;
       color: white;
-      border-radius: 8px;
       text-decoration: none;
-      transition: background-color 0.3s;
+      border-radius: 8px;
+      font-weight: bold;
     }
-    .links a:hover {
-      background-color: #3b73c2;
-    }
-    .footer {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #999;
+    .counter {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Ассалому алайкум</h1>
-    <p>Добро пожаловать на мою страницу.</p>
-    <p>Я интересуюсь знаниями, технологиями и развитием полезных проектов.</p><div class="links">
-  <a href="https://t.me/your_bot_username" target="_blank">💬 Мой Telegram-бот</a>
-  <a href="mailto:muhammadshukur@example.com">📧 Email</a>
-</div>
-
-<div class="footer">
-  <p>Всё происходит по воле Того, Кто выше нас.</p>
-  <p>&copy; 2025 Muhammadshukur</p>
-</div>
-
+  <div class="container">
+    <h1>Добро пожаловать!</h1>
+    <p>Это начало публичной платформы. Здесь будут идеи, поддержка и контакт.</p>
+    <a class="button" href="https://t.me/YOUR_BOT_USERNAME" target="_blank">Связаться со мной в Telegram</a>
+    <div class="counter">
+      Просмотров страницы: <span id="viewCount">0</span>
+    </div>
   </div>
+
+  <script>
+    let count = localStorage.getItem("pageViews") || 0;
+    count++;
+    localStorage.setItem("pageViews", count);
+    document.getElementById("viewCount").innerText = count;
+  </script>
 </body>
 </html>
