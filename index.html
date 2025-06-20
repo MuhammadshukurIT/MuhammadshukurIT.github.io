@@ -3,56 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Добро пожаловать</title>
+  <title>Мои Посты</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #f0f0f0;
-      color: #333;
       margin: 0;
-      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    h1 {
       text-align: center;
+      margin-bottom: 40px;
+      font-size: 3em;
     }
+
+    .post {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+    }
+
+    .post img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .post h2 {
+      margin-top: 15px;
+      font-size: 1.8em;
+      color: #fff;
+    }
+
+    .post p {
+      font-size: 1.1em;
+      color: #ddd;
+    }
+
+    .views {
+      text-align: right;
+      font-size: 0.9em;
+      color: #bbb;
+      margin-top: 10px;
+    }
+
     .container {
-      max-width: 600px;
-      margin: auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 1rem 2rem;
-      background: #0077cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .counter {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #777;
+      max-width: 800px;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Добро пожаловать!</h1>
-    <p>Это начало публичной платформы. Здесь будут идеи, поддержка и контакт.</p>
-    <a class="button" href="https://t.me/YOUR_BOT_USERNAME" target="_blank">Связаться со мной в Telegram</a>
-    <div class="counter">
-      Просмотров страницы: <span id="viewCount">0</span>
+  <div class="overlay">
+    <div class="container">
+      <h1>Добро пожаловать на мои посты</h1>
+
+      <!-- Пост 1 -->
+      <div class="post">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Пейзаж 1">
+        <h2>Покой на берегу</h2>
+        <p>Иногда тишина природы говорит громче тысячи слов. Это утро напомнило мне, что мир не забыл про нас.</p>
+        <div class="views">👁️ Просмотров: <span id="views1">0</span></div>
+      </div>
+
+      <!-- Пост 2 -->
+      <div class="post">
+        <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2" alt="Пейзаж 2">
+        <h2>Свет после темноты</h2>
+        <p>Этот свет пробивался сквозь бурю, как надежда сквозь боль. Каждый закат несёт с собой новую зарю.</p>
+        <div class="views">👁️ Просмотров: <span id="views2">0</span></div>
+      </div>
+
+      <!-- Добавь больше постов по такой же структуре -->
+
     </div>
   </div>
 
   <script>
-    let count = localStorage.getItem("pageViews") || 0;
-    count++;
-    localStorage.setItem("pageViews", count);
-    document.getElementById("viewCount").innerText = count;
+    // Простая имитация просмотров (локально в браузере)
+    function increaseView(id) {
+      let key = "view_" + id;
+      let views = localStorage.getItem(key) || 0;
+      views++;
+      localStorage.setItem(key, views);
+      document.getElementById("views" + id).innerText = views;
+    }
+
+    increaseView(1);
+    increaseView(2);
+    // При добавлении новых постов — увеличь количество
   </script>
 </body>
 </html>
