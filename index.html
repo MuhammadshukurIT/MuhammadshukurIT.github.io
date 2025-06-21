@@ -161,4 +161,124 @@ h1 {
       popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
     }
   </script></body>
-</html>
+</html><!DOCTYPE html><html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мудрость Истины</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #1a1a1a, #333);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  padding: 30px;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3em;
+  text-shadow: 1px 1px 6px #000;
+}
+
+.section-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.post {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.post h2 {
+  margin-top: 15px;
+  font-size: 1.8em;
+  color: #fff;
+}
+
+.post p {
+  font-size: 1.1em;
+  color: #ddd;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.sidebar button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  transition: background 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #666;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 70px;
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  width: 250px;
+}
+
+.popup h3 {
+  margin-top: 0;
+  color: #fff;
+  }
