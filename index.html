@@ -1,109 +1,164 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Мои Посты</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мудрость Истины</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
+    * {
+      box-sizing: border-box;
+    }html {
+  scroll-behavior: smooth;
+}
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      min-height: 100vh;
-      padding: 30px;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #1a1a1a, #333);
+  color: #fff;
+  overflow-x: hidden;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 3em;
-    }
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  padding: 30px;
+  animation: fadeIn 1.5s ease;
+}
 
-    .post {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(5px);
-    }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
-    .post img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3em;
+  text-shadow: 1px 1px 6px #000;
+}
 
-    .post h2 {
-      margin-top: 15px;
-      font-size: 1.8em;
-      color: #fff;
-    }
+.section-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-    .post p {
-      font-size: 1.1em;
-      color: #ddd;
-    }
+.post {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s;
+}
 
-    .views {
-      text-align: right;
-      font-size: 0.9em;
-      color: #bbb;
-      margin-top: 10px;
-    }
+.post:hover {
+  transform: translateY(-5px);
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+.post img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.post h2 {
+  margin-top: 15px;
+  font-size: 1.8em;
+  color: #fff;
+}
+
+.post p {
+  font-size: 1.1em;
+  color: #ddd;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.sidebar button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  transition: background 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #666;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 70px;
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  width: 250px;
+}
+
+.popup h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.popup p {
+  margin: 8px 0;
+  color: #ccc;
+  font-size: 0.95em;
+}
+
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <div class="container">
-      <h1>Добро пожаловать на мои посты</h1>
-
-      <!-- Пост 1 -->
-      <div class="post">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Пейзаж 1">
-        <h2>Покой на берегу</h2>
-        <p>Иногда тишина природы говорит громче тысячи слов. Это утро напомнило мне, что мир не забыл про нас.</p>
-        <div class="views">👁️ Просмотров: <span id="views1">0</span></div>
-      </div>
-
-      <!-- Пост 2 -->
-      <div class="post">
-        <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2" alt="Пейзаж 2">
-        <h2>Свет после темноты</h2>
-        <p>Этот свет пробивался сквозь бурю, как надежда сквозь боль. Каждый закат несёт с собой новую зарю.</p>
-        <div class="views">👁️ Просмотров: <span id="views2">0</span></div>
-      </div>
-
-      <!-- Добавь больше постов по такой же структуре -->
-
+  <div class="sidebar">
+    <button onclick="togglePopup()">Связь</button>
+    <div id="contactPopup" class="popup">
+      <h3>Связаться со мной</h3>
+      <p>Telegram: @mytelegram</p>
+      <p>Email: myemail@example.com</p>
     </div>
+  </div>  <div class="overlay">
+    <div class="container">
+      <h1>Мудрость Истины</h1><div class="section-title">Посты</div>
+
+  <!-- Пост 1 -->
+  <div class="post">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&auto=format&fit=crop" alt="Пейзаж 1">
+    <h2>Покой на берегу</h2>
+    <p>Иногда тишина природы говорит громче тысячи слов. Это утро напомнило мне, что мир не забыл про нас.</p>
   </div>
 
-  <script>
-    // Простая имитация просмотров (локально в браузере)
-    function increaseView(id) {
-      let key = "view_" + id;
-      let views = localStorage.getItem(key) || 0;
-      views++;
-      localStorage.setItem(key, views);
-      document.getElementById("views" + id).innerText = views;
-    }
+  <!-- Пост 2 -->
+  <div class="post">
+    <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=800&auto=format&fit=crop" alt="Пейзаж 2">
+    <h2>Свет после темноты</h2>
+    <p>Этот свет пробивался сквозь бурю, как надежда сквозь боль. Каждый закат несёт с собой новую зарю.</p>
+  </div>
+</div>
 
-    increaseView(1);
-    increaseView(2);
-    // При добавлении новых постов — увеличь количество
-  </script>
-</body>
+  </div>  <script>
+    function togglePopup() {
+      const popup = document.getElementById('contactPopup');
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
+  </script></body>
 </html>
