@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,11 +18,11 @@
       background-color: rgba(0, 0, 0, 0.6);
       min-height: 100vh;
       padding: 30px;
-      animation: fadeIn 1.5s ease;
+      animation: fadeIn 1.2s ease;
     }
     @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     h1 {
       text-align: center;
@@ -45,20 +44,19 @@
       backdrop-filter: blur(8px);
       transition: transform 0.3s ease;
     }
-    .post:hover { transform: scale(1.02); }
+    .post:hover { transform: scale(1.01); }
     .post img {
       width: 100%;
-      max-height: 450px;
+      max-height: 420px;
       object-fit: contain;
-      border-radius: 10px;
+      border-radius: 12px;
       display: block;
-      margin: 0 auto;
+      margin: 0 auto 20px;
     }
     .post h2 {
-      margin-top: 20px;
       font-size: 1.9em;
-      color: #fff;
       text-align: center;
+      margin-bottom: 15px;
     }
     .post p {
       font-size: 1.15em;
@@ -69,102 +67,84 @@
     .container {
       max-width: 800px;
       margin: 0 auto;
-    }
+    }.contact-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.contact-button {
+  background-color: #0088cc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.contact-button:hover {
+  transform: scale(1.1);
+}
+.telegram-link {
+  margin-top: 12px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.telegram-link a {
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+.telegram-link img {
+  width: 28px;
+  height: 28px;
+}
 
-    /* Связь */
-    .contact-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #0088cc;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 26px;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease;
-    }
-    .contact-button:hover {
-      transform: scale(1.1);
-    }
-
-    .telegram-icon {
-      position: fixed;
-      bottom: 100px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      animation: slideUp 0.3s ease;
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .telegram-icon img {
-      width: 34px;
-      height: 34px;
-    }
   </style>
 </head>
-<body>
-
-  <button class="contact-button" onclick="toggleTelegram()">✉️</button>
-
-  <a href="https://t.me/wasdeadbot" target="_blank" id="telegramLink" class="telegram-icon">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
-  </a>
-
-  <div class="overlay">
+<body>  <div class="contact-wrapper">
+    <button class="contact-button" onclick="toggleContact()">✉️</button>
+    <div class="telegram-link" id="telegramLink">
+      <a href="https://t.me/wasdeadbot" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+      </a>
+    </div>
+  </div>  <div class="overlay">
     <div class="container">
-      <h1>Мудрость Истины</h1>
+      <h1>Мудрость Истины</h1><div class="section-title">Пост</div>
 
-      <div class="section-title">Пост</div>
+  <div class="post">
+    <img src="heart-transparent.png" alt="Разбитое сердце" />
+    <h2>Кодекс Надежды</h2>
+    <p>
 
-      <div class="post">
-        <img src="heart-transparent.png" alt="Разбитое сердце" />
-        <h2>Кодекс Надежды</h2>
-        <p>
-было сложный путь, направление изменился, но стало намного легче — но суть осталась.
-Разве это не облегчение? не стало реальнее?
+было сложный путь, направление изменился, но стало намного легче — но суть осталась. Разве это не облегчение? не стало реальнее?
 
 Вывод: планировать — но действовать, надеяться — и держать намерение.
 
-Напоминание: при перенаправлении суть останется,
-но будет больно, что средство исчезло. 
-но оно на самом деле не исчезло, если держал намерение.
-Эти слова кажутся пустыми, но они не пусты.
-Понимаю — это слово тоже кажется пустым, но нет.
-Держи суть. О сердце хрупкое, да тебе очень больно, но не сдавайся ему.
-Эти слова ты сам хотел, и это твои же слова. 
-        </p>
-      </div>
-    </div>
-  </div>
+Напоминание: при перенаправлении суть останется, но будет больно, что средство исчезло. но оно на самом деле не исчезло, если держал намерение. Эти слова кажутся пустыми, но они не пусты. Понимаю — это слово тоже кажется пустым, но нет. Держи суть. О сердце хрупкое, да тебе очень больно, но не сдавайся ему. Эти слова ты сам хотел, и это твои же слова. </p> </div> </div>
 
-  <script>
-    function toggleTelegram() {
-      const link = document.getElementById('telegramLink');
-      if (link.style.display === 'flex') {
-        window.open(link.href, '_blank');
-        link.style.display = 'none';
+  </div>  <script>
+    function toggleContact() {
+      const link = document.getElementById("telegramLink");
+      if (link.style.display === "flex") {
+        link.style.display = "none";
       } else {
-        link.style.display = 'flex';
+        link.style.display = "flex";
       }
     }
-  </script>
-</body>
+  </script></body>
 </html>
