@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,130 +9,126 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
   <style>
-    * {
-      box-sizing: border-box;
-    }html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #1a1a1a, #333);
-  color: #fff;
-  overflow-x: hidden;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
-  padding: 30px;
-  animation: fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 3em;
-  text-shadow: 1px 1px 6px #000;
-}
-
-.section-title {
-  font-size: 2em;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.post {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-  transition: transform 0.3s;
-}
-
-.post:hover {
-  transform: translateY(-5px);
-}
-
-.post img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.post h2 {
-  margin-top: 15px;
-  font-size: 1.8em;
-  color: #fff;
-}
-
-.post p {
-  font-size: 1.1em;
-  color: #ddd;
-  white-space: pre-line;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.sidebar {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 100;
-}
-
-.sidebar a {
-  background-color: #0088cc;
-  color: white;
-  text-decoration: none;
-  padding: 12px 16px;
-  border-radius: 50%;
-  font-size: 20px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  transition: background 0.3s;
-}
-
-.sidebar a:hover {
-  background-color: #00aaff;
-}
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #1a1a1a, #333);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 30px;
+      animation: fadeIn 1.5s ease;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 3em;
+      text-shadow: 1px 1px 6px #000;
+    }
+    .section-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .post {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s;
+    }
+    .post:hover { transform: translateY(-5px); }
+    .post img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .post h2 {
+      margin-top: 15px;
+      font-size: 1.8em;
+      color: #fff;
+    }
+    .post p {
+      font-size: 1.1em;
+      color: #ddd;
+      white-space: pre-line;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .sidebar {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    .sidebar a {
+      background-color: #fff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      transition: background 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #e0e0e0;
+    }
+    .sidebar svg {
+      width: 28px;
+      height: 28px;
+    }
   </style>
 </head>
 <body>
   <div class="sidebar">
-    <a href="https://t.me/wasdeadbot" target="_blank" title="Telegram">📩</a>
-  </div>  <div class="overlay">
+    <a href="https://t.me/wasdeadbot" target="_blank" title="Telegram">
+      <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="120" cy="120" r="120" fill="#0088cc"/>
+        <path d="M177 76L158.5 170.5C157.1 177.6 152.5 179.5 146.3 176.1L115.3 153.5L100.8 167.6C99.2 169.2 97.9 170.5 94.8 170.5L97.1 138.4L156.5 87.9C159.3 85.5 155.9 84.1 152.3 86.5L82.1 131.1L50.7 121.3C43.8 119.2 43.7 114.3 52.1 111L168.2 66.3C174.6 63.9 179.5 67.8 177 76Z" fill="white"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="overlay">
     <div class="container">
-      <h1>Мудрость Истины</h1><div class="section-title">Пост</div>
+      <h1>Мудрость Истины</h1>
 
-  <!-- Пост -->
-  <div class="post">
-    <h2>Кодекс Надежды</h2>
-    <p>
+      <div class="section-title">Пост</div>
 
-было сложный путь, направление изменился, но стало намного легче — но суть осталась. Разве это не облегчение? не стало реальнее?
+      <div class="post">
+        <img src="heart.jpg" alt="Разбитое сердце">
+        <h2>Кодекс Надежды</h2>
+        <p>
+было сложный путь, направление изменился, но стало намного легче — но суть осталась.
+Разве это не облегчение? не стало реальнее?
 
 Вывод: планировать — но действовать, надеяться — и держать намерение.
 
-Напоминание: при перенаправлении суть останется, но будет больно, что средство исчезло. но оно на самом деле не исчезло, если держал намерение. Эти слова кажутся пустыми, но они не пусты. Понимаю — это слово тоже кажется пустым, но нет. Держи суть. О сердце хрупкое,да тебе очень больно, но не сдавайся ему. Эти слова ты сам хотел и это твои же слова. </p> </div> </div>
-
+Напоминание: при перенаправлении суть останется,
+но будет больно, что средство исчезло. 
+но оно на самом деле не исчезло, если держал намерение.
+Эти слова кажутся пустыми, но они не пусты.
+Понимаю — это слово тоже кажется пустым, но нет.
+Держи суть. О сердце хрупкое,да тебе очень больно, но не сдавайся ему. Эти слова ты сам хотел и это твои же слова. 
+        </p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
