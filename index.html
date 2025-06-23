@@ -3,6 +3,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Мудрость Истины</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
   <style>
     * {
       box-sizing: border-box;
@@ -73,6 +77,7 @@ h1 {
 .post p {
   font-size: 1.1em;
   color: #ddd;
+  white-space: pre-line;
 }
 
 .container {
@@ -87,198 +92,46 @@ h1 {
   z-index: 100;
 }
 
-.sidebar button {
-  background-color: #444;
+.sidebar a {
+  background-color: #0088cc;
   color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 20px;
   box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
   transition: background 0.3s;
 }
 
-.sidebar button:hover {
-  background-color: #666;
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  right: 20px;
-  top: 70px;
-  background: rgba(0,0,0,0.8);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
-  width: 250px;
-}
-
-.popup h3 {
-  margin-top: 0;
-  color: #fff;
-}
-
-.popup p {
-  margin: 8px 0;
-  color: #ccc;
-  font-size: 0.95em;
+.sidebar a:hover {
+  background-color: #00aaff;
 }
 
   </style>
 </head>
 <body>
   <div class="sidebar">
-    <button onclick="togglePopup()">Связь</button>
-    <div id="contactPopup" class="popup">
-      <h3>Связаться со мной</h3>
-      <p>Telegram: @mytelegram</p>
-      <p>Email: myemail@example.com</p>
-    </div>
+    <a href="https://t.me/wasdeadbot" target="_blank" title="Telegram">📩</a>
   </div>  <div class="overlay">
     <div class="container">
-      <h1>Мудрость Истины</h1><div class="section-title">Посты</div>
+      <h1>Мудрость Истины</h1><div class="section-title">Пост</div>
 
-  <!-- Пост 1 -->
+  <!-- Пост -->
   <div class="post">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&auto=format&fit=crop" alt="Пейзаж 1">
-    <h2>Покой на берегу</h2>
-    <p>Иногда тишина природы говорит громче тысячи слов. Это утро напомнило мне, что мир не забыл про нас.</p>
+    <h2>Кодекс Надежды</h2>
+    <p>
+
+было сложный путь, направление изменился, но стало намного легче — но суть осталась. Разве это не облегчение? не стало реальнее?
+
+Вывод: планировать — но действовать, надеяться — и держать намерение.
+
+Напоминание: при перенаправлении суть останется, но будет больно, что средство исчезло. но оно на самом деле не исчезло, если держал намерение. Эти слова кажутся пустыми, но они не пусты. Понимаю — это слово тоже кажется пустым, но нет. Держи суть. О сердце хрупкое,да тебе очень больно, но не сдавайся ему. Эти слова ты сам хотел и это твои же слова. </p> </div> </div>
+
   </div>
-
-  <!-- Пост 2 -->
-  <div class="post">
-    <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=800&auto=format&fit=crop" alt="Пейзаж 2">
-    <h2>Свет после темноты</h2>
-    <p>Этот свет пробивался сквозь бурю, как надежда сквозь боль. Каждый закат несёт с собой новую зарю.</p>
-  </div>
-</div>
-
-  </div>  <script>
-    function togglePopup() {
-      const popup = document.getElementById('contactPopup');
-      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-    }
-  </script></body>
-</html><!DOCTYPE html><html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Мудрость Истины</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #1a1a1a, #333);
-  color: #fff;
-  overflow-x: hidden;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
-  padding: 30px;
-  animation: fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 3em;
-  text-shadow: 1px 1px 6px #000;
-}
-
-.section-title {
-  font-size: 2em;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.post {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-  transition: transform 0.3s;
-}
-
-.post:hover {
-  transform: translateY(-5px);
-}
-
-.post img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.post h2 {
-  margin-top: 15px;
-  font-size: 1.8em;
-  color: #fff;
-}
-
-.post p {
-  font-size: 1.1em;
-  color: #ddd;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.sidebar {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 100;
-}
-
-.sidebar button {
-  background-color: #444;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(255,255,255,0.2);
-  transition: background 0.3s;
-}
-
-.sidebar button:hover {
-  background-color: #666;
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  right: 20px;
-  top: 70px;
-  background: rgba(0,0,0,0.8);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
-  width: 250px;
-}
-
-.popup h3 {
-  margin-top: 0;
-  color: #fff;
-  }
+</body>
+</html>
